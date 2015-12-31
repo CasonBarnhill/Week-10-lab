@@ -26,5 +26,22 @@ namespace Pinterest.Web.Controllers
 
             return View();
         }
-    }
+
+        //public JsonResult ()
+        //{
+        //    var something = new property {data of some sort };
+
+        //    return Json(something2, JsonRequestBehavior.AllowGet);
+        //}
+
+
+
+
+       // public JsonResult Pin()
+       //{
+       //      var pinterest = new Url {  };
+ 
+       //      return Json(pinterest, JsonRequestBehavior.AllowGet);
+       //}
+}
 }
