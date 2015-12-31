@@ -177,15 +177,20 @@
     <Compile Include="Migrations\201512311639251_InitialCreate.Designer.cs">
       <DependentUpon>201512311639251_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512312153444_AddedPinTables.cs" />
+    <Compile Include="Migrations\201512312153444_AddedPinTables.Designer.cs">
+      <DependentUpon>201512312153444_AddedPinTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Pin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularViews\pins.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -255,6 +260,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512311639251_InitialCreate.resx">
       <DependentUpon>201512311639251_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512312153444_AddedPinTables.resx">
+      <DependentUpon>201512312153444_AddedPinTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

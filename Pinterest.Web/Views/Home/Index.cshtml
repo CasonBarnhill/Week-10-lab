@@ -5,31 +5,66 @@
 <div class="jumbotron">
 
 
-    <h1>Pinterest</h1>
-    <div ng-controller="pinController">
-        <form>
-            <input type="text" placeholder="Type Url" ng-model="pin.Url" />
-            <input type="text" placeholder="Image" ng-model="pin.imagepath" />
-            <input type="submit" value="Submit" ng-click="uploadPin(pin)" />
-        </form>
-            <div ng-repeat="p in pinterest">
-                <div><a href={{p.Url}} ng-src= {{p.ImagePath}} /></div>
-               
-            </div>
-        </div>
-    </div>
+    <p>
+        <a href="http://localhost:61247/?">
+            <img height="100" width="190" src="https://business.pinterest.com/sites/business/files/bg-basics-badge-02.jpg" />
+        </a>
+    </p>
+    <div ng-view>
+        @*<form>
+                <input type="text" placeholder="Type Url" ng-model="pin.Url" />
+                <input type="text" placeholder="Image" ng-model="pin.imagepath" />
+                <input type="submit" value="Submit" ng-click="uploadPin(pin)" />
+            </form>
+                <div ng-repeat="p in pinterest">
+                    <div><a href={{p.Url}} ng-src= {{p.ImagePath}} /></div>
 
-    @section scripts
+                </div>
+            </div>*@
+    </div>
+</div>
+@section scripts
     {
 
+    <script>
+        var app = angular.module("pinApp", ['ngRoute']);
 
-        var app = angular.module("pinterestApp", [])
-        app.controller('pinController', function ($scope){
-        $scope.pinterest = [];
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/home/index",
+                {
+                    controller: 'pinController',
+                    templateUrl: '/AngularViews/pins.html'
+                })
+
+                .otherwise({ redirectTo: '/home/index' });
+
+        });
+
+        app.controller('pinController', function ($scope, pinFactory) {
+
+            $scope.pinList = [];
+            var init = function () {
+                pinFactory.getPins().then(function (results) { $scope.pinList = results;  });
+            };
+
+            init();
 
         });
 
 
+        app.factory('pinFactory', function ($http) {
+
+            var factory = {};
+
+            factory.getPins = function () {
+                return $http.get("/Home/GetPins").then(function (results) { return results.data; });
+            };
+
+            return factory;
+
+        });
 
 
-    }
+    </script>
+}
