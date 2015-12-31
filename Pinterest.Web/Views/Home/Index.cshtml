@@ -11,13 +11,8 @@
             <input type="text" placeholder="Type Url" ng-model="pin.Url" />
             <input type="text" placeholder="Image" ng-model="pin.imagepath" />
             <input type="submit" value="Submit" ng-click="uploadPin(pin)" />
-
-            
-
-
         </form>
-            <div ng-repeat="p in pinterest | filter:searchText |
-            orderBy: 'name' | orderBy: 'pinterest'">
+            <div ng-repeat="p in pinterest">
                 <div><a href={{p.Url}} ng-src= {{p.ImagePath}} /></div>
                
             </div>
