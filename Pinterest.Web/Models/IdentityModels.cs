@@ -30,9 +30,6 @@ namespace Pinterest.Web.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Pin> Pins
-        {
-            get; set;
-        }
+        public DbSet<Pin> Pins { get; set; }
     }
 }

@@ -1,16 +1,15 @@
 ﻿
+<div style="background-color:antiquewhite; padding: 10px;">
+    <form ng-submit="uploadPin(newPin)">
+        <input type="text" placeholder="Type Url" ng-model="newPin.Url" />
+        <input type="text" placeholder="Type Description" ng-model="newPin.Text" />
+        <input type="submit" value="Save Pin" />
+    </form>
 
- <form>
-    <input type="text" placeholder="Type Url" ng-model="newPin.Text" />
-    <button type="button" ng-click="uploadPin(newPin)" ng-model="newPin.Url/>
-    <input type="submit" value="Submit" ng-click="uploadPin(newPin)" />
-</form>
-<div ng-repeat="p in pinterest">
-    <div><a href={{p.Url}} ng-src={{p.ImagePath}} /></div>
+    <div ng-repeat="pin in pinList">
 
-</div>
-<div ng-repeat="pin in pinList">
+        <span>{{pin.Url}}</span> -  <span>{{pin.Text}} - {{pin.Name}} </span>
 
-    <span>{{pin.Url}}</span> -  <span>{{pin.Text}}</span>
+    </div>
 
 </div>
