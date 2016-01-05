@@ -1,11 +1,10 @@
 ﻿
 <div class="row">
-    <form ng-submit="uploadPin(newPin)">
-        <input type="text" placeholder="Post Url" ng-model="newPin.LinkToPost" />
-        <input type="text" placeholder="Image Url" ng-model="newPin.LinkToImage" />
-        <input type="text" placeholder="Description" ng-model="newPin.Description" />
-        <input type="submit" value="Save Pin" />
-    </form>
+
+
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+        <span class="glyphicon-plus-sign glyphicon"></span> New Pin
+    </button>
 </div>
 
 <div class="row">
@@ -20,4 +19,37 @@
 
     </div>
 
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add a New Pin</h4>
+            </div>
+            <div class="modal-body">
+                <form name="myForm">
+                    <div class="form-group">
+                        <label for="postlink">Post Link</label>
+                        <input type="url" class="form-control" id="postlink" placeholder="Url To Post" ng-model="newPin.LinkToPost">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagelink">Image Link</label>
+                        <input type="url" class="form-control" id="imagelink" placeholder="Url To Image" ng-model="newPin.LinkToImage">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Post Link</label>
+                        <input type="text" class="form-control" id="description" placeholder="Desc of Post" ng-model="newPin.Description">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="uploadPin(newPin)">Add Pin</button>
+            </div>
+        </div>
+    </div>
 </div>

@@ -39,8 +39,17 @@
 
 
             $scope.uploadPin = function (newPin) {
-                console.log("hello!");
-                pinFactory.savePin(newPin).then(function (pin) { $scope.pinList.push(pin); });
+
+                pinFactory.savePin(newPin).then(function (pin) {
+
+                    $scope.pinList.push(pin);
+                    $scope.newPin.LinkToImage = "";
+                    $scope.newPin.LinkToPost = "";
+                    $scope.newPin.Description = "";
+
+
+                    $('#myModal').modal('hide');
+                });
             }
 
             init();
