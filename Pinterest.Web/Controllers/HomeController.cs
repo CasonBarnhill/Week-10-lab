@@ -21,7 +21,7 @@ namespace Pinterest.Web.Controllers
         [HttpGet]
         public JsonResult GetPins()
         {
-            var model = db.Pins.Select(p => new { p.Id, p.Text, p.Url, Name = p.ApplicationUser.UserName });
+            var model = db.Pins.Select(p => new { p.Id, p.Description, p.LinkToImage, p.LinkToPost, Name = p.ApplicationUser.UserName });
             return Json(model, JsonRequestBehavior.AllowGet);
         }
 
@@ -35,7 +35,7 @@ namespace Pinterest.Web.Controllers
             db.Pins.Add(pin);
             db.SaveChanges();
 
-            var model = new { pin.Id, pin.Text, pin.Url, Name = pin.ApplicationUser.UserName };
+            var model = new { pin.Id, pin.Description, pin.LinkToImage, pin.LinkToPost, Name = pin.ApplicationUser.UserName };
             return Json(model);
         }
 

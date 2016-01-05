@@ -1,7 +1,25 @@
 ﻿body {
-    background: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRZ_Z2g2RQtR3FqNrgxQUKdlj00d3gGqv1xqSOdJOSDC_-r1bo9xA");
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('concrete_seamless.png');
+}
+
+.pin {
+    padding: 20px;
+}
+
+.crop {
+    height: 350px;
+    overflow: hidden;
+}
+
+.crop img {
+    /*width: 100%;*/
+}
+
+.pindesc {
+    background-color: white;
+    padding:5px;
 }
 
 /* Set padding to keep content from hitting the edges */

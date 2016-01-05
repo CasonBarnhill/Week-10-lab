@@ -1,14 +1,22 @@
 ﻿
-<div style="background-color:antiquewhite; padding: 10px;">
+<div class="row">
     <form ng-submit="uploadPin(newPin)">
-        <input type="text" placeholder="Type Url" ng-model="newPin.Url" />
-        <input type="text" placeholder="Type Description" ng-model="newPin.Text" />
+        <input type="text" placeholder="Post Url" ng-model="newPin.LinkToPost" />
+        <input type="text" placeholder="Image Url" ng-model="newPin.LinkToImage" />
+        <input type="text" placeholder="Description" ng-model="newPin.Description" />
         <input type="submit" value="Save Pin" />
     </form>
+</div>
 
-    <div ng-repeat="pin in pinList">
+<div class="row">
+    <div ng-repeat="pin in pinList" class="col-md-4 pin">
+        <div class="crop">
+            <img class="img-responsive img-rounded" src="http://placehold.it/100x200/" alt="Missing" ng-src="{{pin.LinkToImage}}" />
+        </div>
+        <div class="pindesc">
+            <span><a href="{{pin.LinkToPost}}">{{pin.Description}}</a></span>
+        </div>
 
-        <span>{{pin.Url}}</span> -  <span>{{pin.Text}} - {{pin.Name}} </span>
 
     </div>
 

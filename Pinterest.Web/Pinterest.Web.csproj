@@ -181,6 +181,10 @@
     <Compile Include="Migrations\201512312153444_AddedPinTables.Designer.cs">
       <DependentUpon>201512312153444_AddedPinTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601051655214_PinColumns.cs" />
+    <Compile Include="Migrations\201601051655214_PinColumns.Designer.cs">
+      <DependentUpon>201601051655214_PinColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -193,6 +197,7 @@
     <Content Include="AngularViews\pins.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\concrete_seamless.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -261,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512312153444_AddedPinTables.resx">
       <DependentUpon>201512312153444_AddedPinTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601051655214_PinColumns.resx">
+      <DependentUpon>201601051655214_PinColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
